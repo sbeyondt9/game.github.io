@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>New Game</title>
+  <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -14,6 +14,17 @@ h1{
 	color:red;
 	font-size:90px;
 }
+
+#result{
+  color:green;
+  width:120px;
+  height:120px;
+  font-size:60px;
+  border-top:5px solid orange;
+  border-bottom:5px solid red;
+
+  border-radius:
+}
 </style>
 
 </head>
@@ -23,12 +34,21 @@ h1{
 <div class="container text-center">
   <div class="row">
   
-    <div class="col-sm-6">
-      <h1 id="demo"></h1><h1 id="demo"></h1>
+    <div class="col-sm-4">
     </div>
     
-    <div class="col-sm-6">
-      <h1 id="demo"></h1><h1 id="demo1"></h1>
+    <div class="col-sm-4">
+         <div>
+              <h1 id="demo"></h1>
+                <h1 id="demo2"></h1>
+
+
+             <input class="text-center" id="result" type="text" />
+             <br><br><button type="button" class="btn btn-warning" onclick="myFunction();">Check answer</button>
+            </div>
+    </div>
+
+     <div class="col-sm-4">
     </div>
   
   </div>
@@ -36,10 +56,28 @@ h1{
 
 
 <script>
-document.getElementById("demo").innerHTML =
-Math.floor(Math.random() * 100);
-document.getElementById("demo1").innerHTML =
-Math.floor(Math.random() * 100);
+
+var a = document.getElementById("demo").innerHTML = Math.floor(Math.random() * 100);
+var b = document.getElementById("demo2").innerHTML = Math.floor(Math.random() * 100);
+   var c =b+a;
+function myFunction(){
+
+    var d = document.getElementById("result").value;
+
+           if(d == ""){
+             alert("please enter your value");
+             return;
+           }
+           if(d == c){
+             alert("Your answer is right");
+           }else{
+             alert("sorry you Are wrong")
+           }
+
+};
+
+
+
 </script>
 </body>
 </html>
