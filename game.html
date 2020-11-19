@@ -44,7 +44,8 @@ h1{
 
 
              <input class="text-center" id="result" type="text" />
-             <br><br><button type="button" class="btn btn-warning" onclick="myFunction();">Check answer</button>
+             <br><br><button type="button" class="btn btn-warning" onclick="myFunction();">Check answer</button><br>
+		 <span id="score"></span>
             </div>
     </div>
 
@@ -60,6 +61,7 @@ h1{
 var a = document.getElementById("demo").innerHTML = Math.floor(Math.random() * 100);
 var b = document.getElementById("demo2").innerHTML = Math.floor(Math.random() * 100);
    var c =b+a;
+   var	= i;
 function myFunction(){
 
     var d = document.getElementById("result").value;
@@ -70,6 +72,8 @@ function myFunction(){
            }
            if(d == c){
              alert("Your answer is right");
+		   document.getElementById("score").innerHTML=i;
+		   i++;
            }else{
              alert("sorry you Are wrong")
            }
