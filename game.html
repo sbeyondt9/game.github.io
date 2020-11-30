@@ -25,9 +25,6 @@ h1{
 
   border-radius:
 }
-#score{
-	font-size:20px;
-}
 </style>
 
 </head>
@@ -48,7 +45,7 @@ h1{
 
              <input class="text-center" id="result" type="text" />
              <br><br><button type="button" class="btn btn-warning" onclick="myFunction();">Check answer</button><br>
-		  <h2>Your score is </h2> <span id="score"></span>
+      <h2>Your score is </h2> <span id="score"></span>
             </div>
     </div>
 
@@ -60,28 +57,34 @@ h1{
 
 
 <script>
-
+  
 var a = document.getElementById("demo").innerHTML = Math.floor(Math.random() * 100);
 var b = document.getElementById("demo2").innerHTML = Math.floor(Math.random() * 100);
-   var c =b+a;
+var c = a + b;
    var i = 0;
 function myFunction(){
+var a = document.getElementById("demo").innerHTML = Math.floor(Math.random() * 100);
+var b = document.getElementById("demo2").innerHTML = Math.floor(Math.random() * 100);
+       var d = document.getElementById("result").value;
 
-    var d = document.getElementById("result").value;
 
            if(d == ""){
              alert("please enter your value");
-             return;
+             return false;
            }
-           if(d == c){
+           if(c == d){
              alert("Your answer is right");
-              i++;
-		   document.getElementById("score").innerHTML=i;
-		  
+               i++;
+             document.getElementById("score").innerHTML=i;
+            return true;
+    
            }else{
-             alert("sorry you Are wrong")
+             alert("sorry you Are wrong");
+              i--;
+             document.getElementById("score").innerHTML=i;
+             
+            return false;
            }
-
 };
 
 
